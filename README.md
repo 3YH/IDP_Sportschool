@@ -1,3 +1,7 @@
+# Everything inside
+Description of certain files and more:
+https://foundation.zurb.com/sites/docs/v/5.5.3/sass-files.html 
+
 # Foundation for Sites Template
 
 **Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
