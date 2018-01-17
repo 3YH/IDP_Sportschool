@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
     $voornaam = mysqli_real_escape_string($conn, $_POST['lid_voornaam']);
     $tussenvoegsel = mysqli_real_escape_string($conn, $_POST['lid_tsnvoegsel']);
     $achternaam = mysqli_real_escape_string($conn, $_POST['lid_achternaam']);
+    $geboortedatum = mysqli_real_escape_string($conn, $_POST['lid_geboortedatum']);
     $email = mysqli_real_escape_string($conn, $_POST['lid_email']);
     $telefoonnummer = mysqli_real_escape_string($conn, $_POST['lid_tel']);
     $uid = mysqli_real_escape_string($conn, $_POST['lid_uid']);
@@ -14,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     //Error handlers
     //Check for empty fields
-    if (empty($voornaam) || empty($tussenvoegsel) || empty($achternaam) || empty($email) || empty($telefoonnummer) || empty($uid) || empty($pwd)) {
+    if (empty($voornaam) || empty($tussenvoegsel) || empty($achternaam) || empty($geboortedatum) || empty($email) || empty($telefoonnummer) || empty($uid) || empty($pwd)) {
         header("Location: ../signup.php?signup=empty");
         exit();
     } else {
@@ -39,7 +40,7 @@ if (isset($_POST['submit'])) {
                     //Hashing the password
                     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
                     //Instert the user into the database
-                    $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_email, lid_tel, lid_uid, lid_pwd) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$email', '$telefoonnummer', '$uid', '$hashedPwd');";
+                    $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_geboortedatum, lid_email, lid_tel, lid_uid, lid_pwd) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geboortedatum', '$email', '$telefoonnummer', '$uid', '$hashedPwd');";
                     mysqli_query($conn, $sql);
                     header("Location: ../signup.php?signup=success");
                     exit();

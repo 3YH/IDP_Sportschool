@@ -14,6 +14,9 @@
                     <label>Achternaam
                         <input type="text" name="lid_achternaam" placeholder="">
                     </label>
+                    <label>Geboortedatum
+                        <input type="date" name="lid_geboortedatum" placeholder="">
+                    </label>
                     <label>Email
                         <input type="text" name="lid_email" placeholder="">
                     </label>
