@@ -2,7 +2,6 @@
   include_once 'header.php'
 ?>
     <form action="includes/signup.inc.php" method="POST">
-        <div class="form-bg">
             <div class="grid-x align-center">
                 <div class="cell shrink form-card">
                     <label>Voornaam
@@ -50,7 +49,6 @@
                     <button type="submit" name="submit">Voltooien</button>
                 </div>
             </div>
-        </div>
     </form>
     <?php
   include_once 'footer.php'
