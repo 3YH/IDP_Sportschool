@@ -38,6 +38,6 @@ tijd = str(einde - start)
 afstand = str(x * 0.35)
 print('finished in: '+ str(einde - start)+ 'seconds')
 print(str(x) + ' keer geklikt')
-print('je hebt '+ afstand + 'meter gelopen in ' + tijd)
+print('je hebt '+ afstand + 'meter gelopen in ' + tijd)                     #Print resultaten
 
 
