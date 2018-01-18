@@ -36,8 +36,9 @@ if (isset($_POST['submit'])) {
             //Hashing the password
             $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
             //Instert the user into the database
-            $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_geboortedatum, lid_straatnaam, lid_huisnr, lid_postcode, lid_woonplaats, lid_email, lid_tel, lid_rekeningnr, lid_bank, lid_uid, lid_pwd) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geboortedatum', '$straatnaam', '$huisnr', '$postcode', '$woonplaats', '$email', '$telefoonnummer', '$rekeningnr','$bank', '$uid', '$hashedPwd');";
+            $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_geboortedatum, lid_straatnaam, lid_huisnr, lid_postcode, lid_woonplaats, lid_email, lid_tel, lid_rekeningnr, lid_bank, lid_uid, lid_pwd, RegisterDate) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geboortedatum', '$straatnaam', '$huisnr', '$postcode', '$woonplaats', '$email', '$telefoonnummer', '$rekeningnr','$bank', '$uid', '$hashedPwd', NOW());";
             mysqli_query($conn, $sql);
+
             header("Location: ../signup.php?signup=success");
             exit();
             }
