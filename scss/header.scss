@@ -1,5 +1,45 @@
-.top-bar{
-    input{
-        display: inline-block;
+.top-bar {
+    .top-bar-right {
+        .menu {
+            li {
+                input {
+                    display: inline-block;
+                }
+                .button {
+                    font-size: 1rem;
+                    padding: 0.60em 1.8em;
+                    background-color: #3F7FFB;
+                    border-radius: 4px;
+                    color: #fff;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.hero-img {
+    background: url(https://source.unsplash.com/1600x900/?gym) center center no-repeat;
+    background-size: cover;
+    min-height:60vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    box-shadow: inset 0 0 0 650px rgba(47, 66, 70, 0.84);
+    .hero-content {
+        margin: 0 auto;
+        h1 {
+            color: #fff;
+            margin-bottom: 0px;
+            line-height: 1;
+            font-weight: bold;
+        }
+        h4 {
+            color: #fff;
+            margin-left: 5px;
+            letter-spacing: 2px;
+        }
     }
 }
