@@ -65,7 +65,7 @@
     $result = mysqli_query($conn, $sql);
     
     $row = mysqli_fetch_array($result);
-    echo "Hello, " . $row['lid_voornaam'] . " (" . $row['lid_email'] . ").";
+    echo 'Hello, ' . $row["lid_voornaam"] . ' (' . $row["lid_email"] . ').';
           } else {
             echo'
     <div class="hero-img">
