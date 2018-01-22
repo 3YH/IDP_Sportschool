@@ -16,6 +16,9 @@
                 <label>Geboortedatum
                     <input type="date" name="lid_geboortedatum" placeholder="" required>
                 </label>
+                <label>Gewicht
+                    <input type="number" name="lid_gewicht" placeholder="" required>
+                </label>
                 <label>Straatnaam
                     <input type="text" name="lid_straatnaam" placeholder="" required>
                 </label>
