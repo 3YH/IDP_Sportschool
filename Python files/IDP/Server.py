@@ -1,5 +1,8 @@
 import socket
 import sys
+from sql_codes import met, met2
+
+
 
 host = ''
 port = 5555
@@ -17,16 +20,14 @@ while True:
     conn, addr = s.accept()
     print("connected to " + str(addr[0]) + ':' + str(addr[1]))
 
-    reply = 'Reply\n'
-    reply2= 'nee\n'
-    data = conn.recv(2048)
-    print(data)
-    print(data.decode('utf-8'))
-    if not data:
+    received = conn.recv(2048)
+    data = received.decode('utf-8')
+    if not received:
         break
-    elif data.decode('utf-8') == 'nee':
-        conn.sendall(str.encode(reply2))
     else:
-        conn.sendall(str.encode(reply))
+        value = data.split(':')
+        sql = {'met': value[1], 'gewicht': value[1]}
+
+        conn.sendall(str.encode(sql[value[0]]))
 
     conn.close()
