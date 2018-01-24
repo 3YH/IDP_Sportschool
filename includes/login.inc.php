@@ -46,12 +46,12 @@ if (isset($_POST['submit'])) {
                     $_SESSION['lid_uid'] = $row['lid_uid'];
 
                     //Update LastVisit when logged in
-                    $lastvisit = "UPDATE leden SET LastVisit = NOW() WHERE lid_uid = '$uid'";
+                    $lastvisit = "UPDATE leden SET lid_lastvisit = NOW() WHERE lid_uid = '$uid'";
                     mysqli_query($conn, $lastvisit);
 
-                    //Update IsLoggedIn when logged in
-                    $loggedin = "UPDATE leden SET IsLoggedIn = 1 WHERE lid_uid = '$uid'";
-                    mysqli_query($conn, $loggedin);
+                    // //Update IsLoggedIn when logged in
+                    // $loggedin = "UPDATE leden SET IsLoggedIn = 1 WHERE lid_uid = '$uid'";
+                    // mysqli_query($conn, $loggedin);
                     
                     header("Location: ../index.php?login=success");
                     exit();

@@ -8,6 +8,7 @@ if (isset($_POST['submit'])) {
     $tussenvoegsel = mysqli_real_escape_string($conn, $_POST['lid_tsnvoegsel']);
     $achternaam = mysqli_real_escape_string($conn, $_POST['lid_achternaam']);
     $geboortedatum = mysqli_real_escape_string($conn, $_POST['lid_geboortedatum']);
+    $gewicht = mysqli_real_escape_string($conn, $_POST['lid_gewicht']);
     $straatnaam = mysqli_real_escape_string($conn, $_POST['lid_straatnaam']);
     $huisnr = mysqli_real_escape_string($conn, $_POST['lid_huisnr']);
     $postcode = mysqli_real_escape_string($conn, $_POST['lid_postcode']);
@@ -36,7 +37,7 @@ if (isset($_POST['submit'])) {
             //Hashing the password
             $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
             //Instert the user into the database
-            $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_geboortedatum, lid_straatnaam, lid_huisnr, lid_postcode, lid_woonplaats, lid_email, lid_tel, lid_rekeningnr, lid_bank, lid_uid, lid_pwd, RegisterDate) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geboortedatum', '$straatnaam', '$huisnr', '$postcode', '$woonplaats', '$email', '$telefoonnummer', '$rekeningnr','$bank', '$uid', '$hashedPwd', NOW());";
+            $sql = "INSERT INTO leden (lid_voornaam, lid_tsnvoegsel, lid_achternaam, lid_geboortedatum, lid_gewicht, lid_straatnaam, lid_huisnr, lid_postcode, lid_woonplaats, lid_email, lid_tel, lid_rekeningnr, lid_bank, lid_uid, lid_pwd, lid_registerdate) VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geboortedatum', '$gewicht', '$straatnaam', '$huisnr', '$postcode', '$woonplaats', '$email', '$telefoonnummer', '$rekeningnr','$bank', '$uid', '$hashedPwd', NOW());";
             mysqli_query($conn, $sql);
 
             header("Location: ../signup.php?signup=success");

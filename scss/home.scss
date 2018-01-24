@@ -1,0 +1,118 @@
+.hero-img {
+    background: url("../img/gymbg.png") top center no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    margin-top: -83px;
+    box-shadow: inset 0 0 0 700px rgba(47, 66, 70, 0.84);
+    z-index: 3;
+    .hero-content {
+        @include absolute-center;
+        margin-top: -70px;
+        text-align: center;
+        color: #fff;
+        h1 {
+            font-weight: bold;
+        }
+        .button{
+            font-size: 1.8rem;
+            padding: 0.9em 2em;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        }
+    }
+}
+
+.more-info {
+    position: absolute;
+    height: auto;
+    width: 90px;
+    margin: auto auto 40px;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    z-index: 1500;
+    h6 {
+        color: #fff;
+        font-weight: 500;
+        font-family: "Roboto";
+        letter-spacing: 1px;
+    }
+    .line {
+        width: 1px;
+        height: 80px;
+        border-left: 1px solid #fff;
+        margin: auto;
+    }
+}
+
+.abonnementen {
+    @include xy-grid;
+    @include xy-grid-container();
+    @include xy-grid-layout(3, '.card');
+    padding: 110px 20px 0 20px!important ;
+    z-index: 5;
+    background-color: #fff;
+    margin-top: -70px;
+    .populair{
+        @include xy-cell;
+        @include horizontal-center;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 3px;
+        span{
+            font-size: 20px;
+            color: #fff;
+            background-color: #293A4D;
+            padding: 11px 75px;
+        }
+    }
+    .card-section {
+        position: relative;
+        text-align: center;
+        padding-top: 30px;
+        h2 {
+            padding-bottom: 30px;
+            span {
+                font-size: 25px;
+                display: inline-block;
+                margin-left: -10px;
+            }
+        }
+        .button {
+            width: 280px;
+            margin: 0 auto;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        }
+    }
+    .mini {
+        border-top: 5px solid #46A9DF;
+    }
+    .normal {
+        border-top: 5px solid #293A4D;
+        a.button.large {
+            background-color: #293A4D;
+        }
+    }
+    .big {
+        border-top: 5px solid #46A9DF;
+    }
+}
+
+
+.over-ons{
+    @include xy-grid;
+    @include xy-grid-container(760px);
+    margin-top: 50px;
+    word-break: break-word;
+	word-wrap: break-word;
+    font-weight: 300;
+    line-height: 1.40;
+    font-size: 19px;
+    h2{
+        @include xy-cell;
+        color:#46A9DF;
+        text-align: center;
+    }
+}
