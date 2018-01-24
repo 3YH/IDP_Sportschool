@@ -1,19 +1,15 @@
 <?php 
-if (isset($_POST['submit'])) {
-    
-    include 'dbh.inc.php';
+ include 'dbh.inc.php';
 
     $voornaam = mysqli_real_escape_string($conn, $_POST['lid_voornaam']);
     $uid = mysqli_real_escape_string($conn, $_POST['uid']);
     
+    $sql = "UPDATE leden SET lid_voornaam='$_POST[u_voornaam]' WHERE lid_id='$_POST[id]'";
 
-    $update = "UPDATE leden SET lid_voornaam='$uvoornaam' WHERE lid_uid = '$uid'";
-                    mysqli_query($conn, $update);
-
+        if (mysqli_query($conn, $sql)) {
             header("Location: ../update.php?update=success");
             exit();
-
-    } else {
-    header("Location: ../update.php");
-    exit();
-}
+        } else {
+            echo "Not updated";
+        }
+    ?>
