@@ -1,0 +1,109 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.12deb2+deb8u2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 24, 2018 at 02:08 PM
+-- Server version: 5.5.57-0+deb8u1
+-- PHP Version: 5.6.33-0+deb8u1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `idpsportschool`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `apparaat`
+--
+
+CREATE TABLE IF NOT EXISTS `apparaat` (
+  `apparaat_id` int(11) NOT NULL,
+  `apparaat_naam` varchar(256) CHARACTER SET latin1 NOT NULL,
+  `met_waarde` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leden`
+--
+
+CREATE TABLE IF NOT EXISTS `leden` (
+  `lid_id` int(50) NOT NULL,
+  `resultaat_id` int(50) NOT NULL,
+  `lid_gewicht` int(50) NOT NULL,
+  `isLoggedIn` varchar(10) NOT NULL,
+  `LastVisit` date NOT NULL,
+  `lid_achternaam` varchar(256) NOT NULL,
+  `lid_bank` varchar(256) NOT NULL,
+  `lid_email` varchar(256) NOT NULL,
+  `lid_geboortedatum` date NOT NULL,
+  `lid_huisnr` int(50) NOT NULL,
+  `lid_postcode` varchar(50) NOT NULL,
+  `lid_pwd` varchar(256) NOT NULL,
+  `lid_registerdate` date NOT NULL,
+  `lid_rekeningnr` varchar(256) NOT NULL,
+  `lid_straatnaam` varchar(256) NOT NULL,
+  `lid_tel` int(50) NOT NULL,
+  `lid_tsnvoegsel` varchar(256) NOT NULL,
+  `lid_uid` varchar(256) NOT NULL,
+  `lid_voornaam` varchar(256) NOT NULL,
+  `lid_woonplaats` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resultaat`
+--
+
+CREATE TABLE IF NOT EXISTS `resultaat` (
+  `resultaat_id` int(50) NOT NULL,
+  `apparaat_id` int(11) NOT NULL,
+  `tijd` int(50) NOT NULL,
+  `cal` int(50) NOT NULL,
+  `gem_snelheid` int(50) NOT NULL,
+  `afstand` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `apparaat`
+--
+ALTER TABLE `apparaat`
+ ADD PRIMARY KEY (`apparaat_id`);
+
+--
+-- Indexes for table `leden`
+--
+ALTER TABLE `leden`
+ ADD PRIMARY KEY (`lid_id`), ADD KEY `resultaat_id` (`resultaat_id`);
+
+--
+-- Indexes for table `resultaat`
+--
+ALTER TABLE `resultaat`
+ ADD PRIMARY KEY (`resultaat_id`), ADD UNIQUE KEY `resultaat_id` (`resultaat_id`), ADD KEY `apparaat_id` (`apparaat_id`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `leden`
+--
+ALTER TABLE `leden`
+ADD CONSTRAINT `resultaat_id_FK` FOREIGN KEY (`resultaat_id`) REFERENCES `resultaat` (`resultaat_id`);
+
+--
+-- Constraints for table `resultaat`
+--
+ALTER TABLE `resultaat`
+ADD CONSTRAINT `apparaat_id_FK` FOREIGN KEY (`apparaat_id`) REFERENCES `apparaat` (`apparaat_id`);
