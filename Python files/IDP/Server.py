@@ -1,6 +1,7 @@
 import socket
 import sys
-from sql_codes import met, met2
+from sql_codes import met, gewicht
+import pymysql
 
 
 
@@ -26,8 +27,15 @@ while True:
         break
     else:
         value = data.split(':')
-        sql = {'met': value[1], 'gewicht': value[1]}
-
-        conn.sendall(str.encode(sql[value[0]]))
+        sql = {'met':met + '\'' + value[1] + '\'', 'gewicht': gewicht + '\'' + value[1] + '\''}
+        db = pymysql.connect('localhost', 'root', 'root', 'idpsportschool')
+        cursor = db.cursor()
+        cursor.execute(sql[value[0]])
+        try:
+            result = cursor.fetchone()
+            reply = (result[0])
+        except:
+            reply = 'none'
+        conn.sendall(str.encode((str(reply))))
 
     conn.close()
