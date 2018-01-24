@@ -1,0 +1,28 @@
+.dashboard{
+    @include xy-grid;
+    @include xy-grid-container();
+    .left{
+        @include xy-cell(3);
+        .lid{
+            height: 500px;
+            background-color: grey;
+        }
+        .logout{
+            height: 100px;
+        }
+    }
+    .middle{
+        @include xy-cell(6);
+    }
+    .right{
+        @include xy-cell(3);
+        .stats{
+            height: 300px;
+            background-color: grey;
+        }
+        .abonnement{
+            height: 300px;
+            background-color: grey;
+        }
+    }
+}
