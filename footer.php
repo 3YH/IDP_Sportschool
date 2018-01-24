@@ -2,7 +2,6 @@
   <script src="bower_components/what-input/dist/what-input.js"></script>
   <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
   <script src="js/app.js"></script>
-	<script src="js/parallax.min.js"></script>
   <script>
 		$(document).ready(function () {
 			// Add smooth scrolling to all links
