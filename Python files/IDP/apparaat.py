@@ -22,7 +22,6 @@ while True:
     start = 0
     einde = 0
     x = 0
-    code = input('wat is je code')
     apparaat = input(
         '\n\nOp welk apparaat wil je sporten? \nLoopband, Fiets of Roeiapparaat \n\nWil je stoppen? typ iets anders')
     if apparaat.upper() == 'LOOPBAND' or apparaat.upper() == 'FIETS' or apparaat.upper() == 'ROEIAPPARAAT':
@@ -30,6 +29,7 @@ while True:
     else:
         print('Oke tot ziens')
         break
+    code = input('wat is je code')
     # doe niks tot er op start word geklikt
     while sportend == False:
         if GPIO.input(start_knop) == GPIO.HIGH:  # Als er op start wordt geklikt
