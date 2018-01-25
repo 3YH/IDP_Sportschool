@@ -19,7 +19,11 @@
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Benno</li>
-          <li>
+          <?php
+          if (isset($_SESSION['lid_id'])) {
+            echo'';
+          } else {
+            echo'<li>
             <a href="#home">Home</a>
           </li>
           <li>
@@ -27,7 +31,9 @@
           </li>
           <li>
             <a href="#overons">Over ons</a>
-          </li>
+          </li>';
+          }
+        ?>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -35,13 +41,13 @@
           <?php
           if (isset($_SESSION['lid_id'])) {
             echo'<li><form action="includes/logout.inc.php" method="POST">
-                 <button class="button" type="submit" name="submit">Logout</button>
+                 <button class="button" type="submit" name="submit">Uitloggen</button>
                  </form></li>';
           } else {
             echo'<li><form action="includes/login.inc.php" method="POST">
                 <input type="text" name="uid" placeholder="Gebruikersnaam/email" required></li>
                 <li><input type="password" name="pwd" placeholder="Wachtwoord" required></li>
-                <li><button class="button" type="submit" name="submit">Login</button>
+                <li><button class="button" type="submit" name="submit">Inloggen</button>
                 </form></li>';
           }
         ?>
