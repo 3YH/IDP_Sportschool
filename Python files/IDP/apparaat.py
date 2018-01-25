@@ -78,7 +78,15 @@ while True:
     print('je gemiddelde snelheid is ' + str(gemiddelde_snelheid) + ' Km/h')
     print('je verbrand ' + str(cal) + 'kcal')
 
-    resultaat = 'resultaat:' + str(code) + ',' + str(tijd) + ',' + str(cal) + ',' + str(
-        gemiddelde_snelheid) + ',' + str(afstand)
+    s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(server_address)
+    verzoek3 = 'apparaat_code:' + apparaat.upper()
+    s.sendall(verzoek3)
+    reply = s.recv(2048)
+    apparaat_code = reply.decode('utf-8')
+    s.close()
+
+    resultaat = 'resultaat:' + '\'' + str(code) + '\'' + ',' + '\'' + str(apparaat_code) + '\'' + ',' + '\'' + str(tijd) + '\'' + ',' + '\'' + str(cal) + '\'' + ',' +  \
+                '\'' + str(gemiddelde_snelheid) + '\'' + ',' + '\'' + str(afstand) + '\''
 
     print(resultaat)
