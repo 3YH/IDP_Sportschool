@@ -19,7 +19,11 @@
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Benno</li>
-          <li>
+          <?php
+          if (isset($_SESSION['lid_id'])) {
+            echo'';
+          } else {
+            echo'<li>
             <a href="#home">Home</a>
           </li>
           <li>
@@ -27,7 +31,9 @@
           </li>
           <li>
             <a href="#overons">Over ons</a>
-          </li>
+          </li>';
+          }
+        ?>
         </ul>
       </div>
       <div class="top-bar-right">

@@ -2,6 +2,11 @@
   include_once 'header.php'
 ?>
   <?php
+
+// $sql = "SELECT COUNT(*) FROM leden WHERE LastTimeSeen > DATE_SUB(NOW(), INTERVAL 1 MINUTE)"; 
+// $rs = mysqli_query($conn, $sql); 
+// $result = mysqli_fetch_array($rs); 
+//  echo $result[0]; 
     //       if (isset($_SESSION['lid_id'])) {
     // $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
     // $result = mysqli_query($conn, $sql);
