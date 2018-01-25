@@ -15,7 +15,7 @@ GPIO.setup(counter, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(led, GPIO.OUT)
 host = ''
 port = 5555
-server_address = ('192.168.178.73', 5555)
+server_address = ('192.168.178.73', port)
 
 while True:
     sportend = False
@@ -81,7 +81,7 @@ while True:
     s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(server_address)
     verzoek3 = 'apparaat_code:' + apparaat.upper()
-    s.sendall(verzoek3)
+    s.sendall(str.encode(verzoek3))
     reply = s.recv(2048)
     apparaat_code = reply.decode('utf-8')
     s.close()
@@ -89,4 +89,7 @@ while True:
     resultaat = 'resultaat:' + '\'' + str(code) + '\'' + ',' + '\'' + str(apparaat_code) + '\'' + ',' + '\'' + str(tijd) + '\'' + ',' + '\'' + str(cal) + '\'' + ',' +  \
                 '\'' + str(gemiddelde_snelheid) + '\'' + ',' + '\'' + str(afstand) + '\''
 
-    print(resultaat)
+    s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(server_address)
+    s.sendall(str.encode(resultaat))
+    s.close()
