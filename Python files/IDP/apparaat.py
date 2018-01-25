@@ -15,7 +15,7 @@ GPIO.setup(counter, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(led, GPIO.OUT)
 host = ''
 port = 5555
-server_address = ('192.168.178.73', port)
+server_address = ('145.89.252.97', port)
 
 while True:
     sportend = False

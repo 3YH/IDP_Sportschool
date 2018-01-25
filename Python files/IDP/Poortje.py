@@ -24,14 +24,26 @@ while True:
     s.connect(server_address)
     s.sendall(str.encode("code:"+code))
     answer = s.recv(2048)
-    reply = answer.decode('utf-8')
+    isLoggedin = answer.decode('utf-8')
     s.close ()
 
-    if reply == "none":
+    if isLoggedin == "none":
         GPIO.output(led_rood, 1)
         time.sleep(1)
         GPIO.output(led_rood, 0)
     else:
+        if isLoggedin == "true":
+            status = "false"
+            print ("u bent uitgelogd")
+        else:
+            status = "true"
+            print ("u bent ingelogd")
+
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Open een socket
+        s.connect(server_address)
+        s.sendall(str.encode("status:"+status+" WHERE lid_id = "+ "\'"+code+"\'"))
+        s.close()
+
         GPIO.output(led_groen, 1)
         time.sleep(2)
         GPIO.output(led_groen, 0)
