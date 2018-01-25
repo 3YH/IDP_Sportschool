@@ -9,7 +9,20 @@
  <div class="grid-x align-center">
 <?php 
         echo '<form action="includes/update.inc.php" method="POST">';
-        echo '<input type="text" name=u_voornaam value="' . $row["lid_voornaam"] . '" placeholder=""/>';
+        echo '<label>Voornaam<input type="text" name=u_voornaam value="' . $row["lid_voornaam"] . '" placeholder=""/></label>';
+        echo '<label>Tussenvoegsel<input type="text" name=u_tsnvoegsel value="' . $row["lid_tsnvoegsel"] . '" placeholder=""/></label>';
+        echo '<label>Achternaam<input type="text" name=u_achternaam value="' . $row["lid_achternaam"] . '" placeholder=""/></label>';
+        echo '<label>Geboortedatum<input type="date" name=u_geboortedatum value="' . $row["lid_geboortedatum"] . '" placeholder=""/></label>';
+        echo '<label>Gewicht<input type="text" name=u_gewicht value="' . $row["lid_gewicht"] . '" placeholder=""/></label>';
+        echo '<label>Straatnaam<input type="text" name=u_straatnaam value="' . $row["lid_straatnaam"] . '" placeholder=""/></label>';
+        echo '<label>Huisnummer<input type="text" name=u_huisnummer value="' . $row["lid_huisnummer"] . '" placeholder=""/></label>';
+        echo '<label>Postcode<input type="text" name=u_postcode value="' . $row["lid_postcode"] . '" placeholder=""/></label>';
+        echo '<label>Woonplaats<input type="text" name=u_woonplaats value="' . $row["lid_woonplaats"] . '" placeholder=""/></label>';
+        echo '<label>Email<input type="text" name=u_email value="' . $row["lid_email"] . '" placeholder=""/></label>';
+        echo '<label>Telefoonnummer<input type="text" name=u_tel value="' . $row["lid_tel"] . '" placeholder=""/></label>';
+        echo '<label>Rekeningnummer<input type="text" name=u_rekeningnr value="' . $row["lid_rekeningnr"] . '" placeholder=""/></label>';
+        echo '<label>Bank<input type="text" name=u_bank value="' . $row["lid_bank"] . '" placeholder=""/></label>';
+        echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
         echo '<input type="hidden" name="id" value="' . $row["lid_id"] . '"/>';
         echo '<input type="submit" value="Submit"/>';
         echo'</form>';

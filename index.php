@@ -70,7 +70,7 @@
           $row = mysqli_fetch_array($result);
           echo '' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '';
           ?>
-          <a href="">Bewerken</a>
+          <a href="update.php">Bewerken</a>
           </div>
           <div class="logout">
             <p>Uitloggen</p>
