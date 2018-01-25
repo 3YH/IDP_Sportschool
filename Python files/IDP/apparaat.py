@@ -53,7 +53,7 @@ while True:
     verzoek = 'met:' + apparaat  # verstuur verzoek voor met code van Apparaat
     s.sendall(str.encode(verzoek))
     reply = s.recv(2048)
-    met = (reply.decode('utf-8'))  # Stop antwoord in variable met
+    met = float(reply.decode('utf-8'))  # Stop antwoord in variable met
     s.close()
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # open socket
@@ -62,7 +62,7 @@ while True:
     verzoek2 = 'gewicht:' + code  # Verstuur verzoek voor gewicht
     s.sendall(str.encode(verzoek2))
     reply = s.recv(2048)
-    gewicht = (reply.decode('utf-8'))  # Stop reply in variable gewicht
+    gewicht = float(reply.decode('utf-8'))  # Stop reply in variable gewicht
     s.close()
 
     print(met, gewicht)
@@ -86,8 +86,7 @@ while True:
     apparaat_code = reply.decode('utf-8')
     s.close()
 
-    resultaat = 'resultaat:' + '\'' + str(code) + '\'' + ',' + '\'' + str(apparaat_code) + '\'' + ',' + '\'' + str(tijd) + '\'' + ',' + '\'' + str(cal) + '\'' + ',' +  \
-                '\'' + str(gemiddelde_snelheid) + '\'' + ',' + '\'' + str(afstand) + '\''
+    resultaat = 'resultaat:' + '\'' + str(code) + '\'' + ',' + '\'' + str(apparaat_code) + '\'' + ',' + '\'' + str(tijd) + '\'' + ',' + '\'' + str(cal) + '\'' + ',' + '\'' + str(gemiddelde_snelheid) + '\'' + ',' + '\'' + str(afstand) + '\''
 
     s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(server_address)
