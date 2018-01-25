@@ -85,7 +85,6 @@ while True:
     reply = s.recv(2048)
     apparaat_code = reply.decode('utf-8')
     s.close()
-
     resultaat = 'resultaat:' + '\'' + str(code) + '\'' + ',' + '\'' + str(apparaat_code) + '\'' + ',' + '\'' + str(tijd) + '\'' + ',' + '\'' + str(cal) + '\'' + ',' + '\'' + str(gemiddelde_snelheid) + '\'' + ',' + '\'' + str(afstand) + '\''
 
     s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
