@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
 
-  <body>
+  <body <?php if (isset($_SESSION['lid_id'])) { echo'class="dashbg"'; }?>>
     <div id="home"></div>
     <div class="top-bar" data-sticky data-options="marginTop:0;">
       <div class="top-bar-left">

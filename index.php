@@ -61,10 +61,16 @@
     //     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repellendus ipsa harum impedit quaerat nostrum quia laudantium deleniti odio laborum. <br> <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illo a nemo debitis aliquam! Inventore libero tempore enim nesciunt numquam? Maiores enim rerum iure animi id! <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed ab repudiandae quisquam molestiae dicta nostrum harum neque. Ullam neque dolores iure vitae ad, mollitia repudiandae fugiat quam aspernatur, reiciendis quod maiores accusantium doloremque enim non eveniet et officiis. Id, libero?'; 
     //       }
     ?>
-    <div class="dashboard">
+    <div class="dashboard grid-padding-x">
         <div class="left">
           <div class="lid">
-            <p>Naam</p>
+            <?php
+          $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_array($result);
+          echo '' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '';
+          ?>
+          <a href="">Bewerken</a>
           </div>
           <div class="logout">
             <p>Uitloggen</p>
@@ -78,7 +84,7 @@
             <p>Naam</p>
           </div>
           <div class="abonnement">
-            <p>Uitloggen</p>
+            <p>Advies vragen</p>
           </div>
         </div>
     </div>
