@@ -69,15 +69,22 @@
     <div class="dashboard grid-padding-x">
         <div class="left">
           <div class="lid">
+          <a href="update.php" class="button">Bewerken</a>
             <?php
           $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_array($result);
-          echo '' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '';
+          // Alle data van lid ophalen/naam weergeven
+          echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '</h4>';
+          $lastvisit = $row["LastVisit"];
+
+          // Weergeven aantal dagen sinds laatste bezoek
+          $date = new DateTime($lastvisit);
+          $now = new DateTime();
+          echo $date->diff($now)->format("<p>Uw laatste bezoek was %d dagen geleden</p>");
           ?>
-          <a href="update.php">Bewerken</a>
           </div>
-          <div class="logout">
+          <div class="advies">
             <p>Uitloggen</p>
           </div>
         </div>

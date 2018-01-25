@@ -41,13 +41,13 @@
           <?php
           if (isset($_SESSION['lid_id'])) {
             echo'<li><form action="includes/logout.inc.php" method="POST">
-                 <button class="button" type="submit" name="submit">Logout</button>
+                 <button class="button" type="submit" name="submit">Uitloggen</button>
                  </form></li>';
           } else {
             echo'<li><form action="includes/login.inc.php" method="POST">
                 <input type="text" name="uid" placeholder="Gebruikersnaam/email" required></li>
                 <li><input type="password" name="pwd" placeholder="Wachtwoord" required></li>
-                <li><button class="button" type="submit" name="submit">Login</button>
+                <li><button class="button" type="submit" name="submit">Inloggen</button>
                 </form></li>';
           }
         ?>

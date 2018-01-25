@@ -4,7 +4,7 @@
     <form action="includes/signup.inc.php" method="POST">
         <div class="grid-x align-center">
             <div class="cell shrink form-card">
-            <div class="h4">Aanmelden</div>
+            <h4>Aanmelden</h4>
                 <label>Voornaam
                     <input type="text" name="lid_voornaam" placeholder="" required>
                 </label>
