@@ -1,5 +1,9 @@
 import socket
 import sys
+from sql_codes import met, gewicht, code, resultaat, apparaat_code, status
+import pymysql
+
+
 
 host = ''
 port = 5555
@@ -17,16 +21,23 @@ while True:
     conn, addr = s.accept()
     print("connected to " + str(addr[0]) + ':' + str(addr[1]))
 
-    reply = 'Reply\n'
-    reply2= 'nee\n'
-    data = conn.recv(2048)
-    print(data)
-    print(data.decode('utf-8'))
-    if not data:
+    received = conn.recv(2048)
+    data = received.decode('utf-8')
+    if not received:
         break
-    elif data.decode('utf-8') == 'nee':
-        conn.sendall(str.encode(reply2))
     else:
-        conn.sendall(str.encode(reply))
+        value = data.split(':')
+        sql = {'met':met + '\'' + value[1] + '\'', 'gewicht': gewicht + '\'' + value[1] + '\'', 'code':code + '\'' + value[1] + '\'',
+               'apparaat_code':apparaat_code + '\''+value[1] + '\'', 'resultaat':resultaat + value[1] + ');', 'status':status + value[1]}
+        db = pymysql.connect('localhost', 'root', 'root', 'idpsportschool')
+        cursor = db.cursor()
+        cursor.execute(sql[value[0]])
+        db.commit()
+        try:
+            result = cursor.fetchone()
+            reply = (result[0])
+        except:
+            reply = 'none'
+        conn.sendall(str.encode((str(reply))))
 
     conn.close()

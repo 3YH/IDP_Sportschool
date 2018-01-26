@@ -1,0 +1,144 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.12deb2+deb8u2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 25, 2018 at 04:43 PM
+-- Server version: 5.5.57-0+deb8u1
+-- PHP Version: 5.6.33-0+deb8u1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `idpsportschool`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `apparaat`
+--
+
+CREATE TABLE IF NOT EXISTS `apparaat` (
+`apparaat_id` int(11) NOT NULL,
+  `apparaat_naam` varchar(256) CHARACTER SET latin1 NOT NULL,
+  `met_waarde` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `apparaat`
+--
+
+INSERT INTO `apparaat` (`apparaat_id`, `apparaat_naam`, `met_waarde`) VALUES
+(1, 'Loopband', 8),
+(2, 'Roeien', 3),
+(3, 'Fiets', 16);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leden`
+--
+
+CREATE TABLE IF NOT EXISTS `leden` (
+  `lid_id` int(50) NOT NULL,
+  `pas_code` varchar(256) NOT NULL,
+  `lid_gewicht` int(50) NOT NULL,
+  `isLoggedIn` varchar(10) NOT NULL,
+  `LastVisit` date NOT NULL,
+  `lid_achternaam` varchar(256) NOT NULL,
+  `lid_bank` varchar(256) NOT NULL,
+  `lid_email` varchar(256) NOT NULL,
+  `lid_geboortedatum` date NOT NULL,
+  `lid_huisnr` int(50) NOT NULL,
+  `lid_postcode` varchar(50) NOT NULL,
+  `lid_pwd` varchar(256) NOT NULL,
+  `lid_registerdate` date NOT NULL,
+  `lid_rekeningnr` varchar(256) NOT NULL,
+  `lid_straatnaam` varchar(256) NOT NULL,
+  `lid_tel` int(50) NOT NULL,
+  `lid_tsnvoegsel` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `lid_uid` varchar(256) NOT NULL,
+  `lid_voornaam` varchar(256) NOT NULL,
+  `lid_woonplaats` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leden`
+--
+
+INSERT INTO `leden` (`lid_id`, `pas_code`, `lid_gewicht`, `isLoggedIn`, `LastVisit`, `lid_achternaam`, `lid_bank`, `lid_email`, `lid_geboortedatum`, `lid_huisnr`, `lid_postcode`, `lid_pwd`, `lid_registerdate`, `lid_rekeningnr`, `lid_straatnaam`, `lid_tel`, `lid_tsnvoegsel`, `lid_uid`, `lid_voornaam`, `lid_woonplaats`) VALUES
+(12345, '12345', 56, 'false', '2018-01-23', 'Beer', 'ING', 'meneer@hotmail.com', '2000-01-09', 18, '1688JK', 'wachtwoord', '2017-09-04', 'NL77INGB0000578446', 'boerenstreek', 658748754, 'de', 'Gebruikersnaam', 'henk', 'Soest');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resultaat`
+--
+
+CREATE TABLE IF NOT EXISTS `resultaat` (
+`resultaat_id` int(50) NOT NULL,
+  `lid_id` int(50) NOT NULL,
+  `apparaat_id` int(11) NOT NULL,
+  `tijd` int(50) NOT NULL,
+  `cal` int(50) NOT NULL,
+  `gem_snelheid` int(50) NOT NULL,
+  `afstand` int(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resultaat`
+--
+
+INSERT INTO `resultaat` (`resultaat_id`, `lid_id`, `apparaat_id`, `tijd`, `cal`, `gem_snelheid`, `afstand`) VALUES
+(1, 12345, 1, 100, 5, 10, 15),
+(2, 12345, 1, 10, 5, 15, 50),
+(3, 12345, 1, 5, 8, 7, 9);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `apparaat`
+--
+ALTER TABLE `apparaat`
+ ADD PRIMARY KEY (`apparaat_id`);
+
+--
+-- Indexes for table `leden`
+--
+ALTER TABLE `leden`
+ ADD PRIMARY KEY (`lid_id`), ADD UNIQUE KEY `pas_code` (`pas_code`), ADD KEY `lid_id` (`lid_id`);
+
+--
+-- Indexes for table `resultaat`
+--
+ALTER TABLE `resultaat`
+ ADD PRIMARY KEY (`resultaat_id`), ADD UNIQUE KEY `resultaat_id` (`resultaat_id`), ADD KEY `apparaat_id` (`apparaat_id`), ADD KEY `resultaat_id_2` (`resultaat_id`), ADD KEY `lid_id` (`lid_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `apparaat`
+--
+ALTER TABLE `apparaat`
+MODIFY `apparaat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `resultaat`
+--
+ALTER TABLE `resultaat`
+MODIFY `resultaat_id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `resultaat`
+--
+ALTER TABLE `resultaat`
+ADD CONSTRAINT `apparaat_id_FK` FOREIGN KEY (`apparaat_id`) REFERENCES `apparaat` (`apparaat_id`),
+ADD CONSTRAINT `lid_id_FK` FOREIGN KEY (`lid_id`) REFERENCES `leden` (`lid_id`);

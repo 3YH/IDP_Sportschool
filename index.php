@@ -85,7 +85,7 @@
           <a href="update.php" class="button">Bewerken</a>
           </div>
           <div class="advies">
-          <a href="update.php" class="button">Advies aan een medewerker vragen.</a>
+          <a href="advies.php" class="button">Advies aan een medewerker vragen</a>
           </div>
         </div>
         <div class="middle">
