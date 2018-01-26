@@ -29,7 +29,7 @@
         echo '<label>Bank<input type="text" name=u_bank value="' . $row["lid_bank"] . '" placeholder=""/></label>';
         echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
         echo '<input type="hidden" name="id" value="' . $row["lid_id"] . '"/>';
-        echo '<input type="submit" value="Submit"/>';
+        echo '<input class="button" type="submit" value="Wijzigen"/>';
         echo'</form>';
     ?>
     </div>

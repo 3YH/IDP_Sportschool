@@ -69,7 +69,6 @@
     <div class="dashboard grid-padding-x">
         <div class="left">
           <div class="lid">
-          <a href="update.php" class="button">Bewerken</a>
             <?php
           $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
           $result = mysqli_query($conn, $sql);
@@ -83,9 +82,10 @@
           $now = new DateTime();
           echo $date->diff($now)->format("<p>Uw laatste bezoek was %d dagen geleden</p>");
           ?>
+          <a href="update.php" class="button">Bewerken</a>
           </div>
           <div class="advies">
-            <p>Uitloggen</p>
+          <a href="advies.php" class="button">Advies aan een medewerker vragen</a>
           </div>
         </div>
         <div class="middle">
