@@ -10,14 +10,14 @@
  <div class="cell shrink form-card">
    <form method="post" action="includes/mail.inc.php">
    <label> Uw naam
-    <input name="name" type="text" value="<?php echo '' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . ''?>"/>
+    <input name="name" type="text" value="<?php echo '' . $row["lid_voornaam"] . ' ' . $row["lid_tsnvoegsel"] . ' ' . $row["lid_achternaam"] . ''?>"/>
     </label>
     <input name="name" type="hidden" value="<?php echo '' . $row["lid_email"] . ''?>"/>
     <label> Onderwerp
     <input name="subject" type="text" value="Advies medewerker"/>
     </label>
     <label> Uw bericht
-    <textarea name="message" rows="10" cols="40" placeholder="Laat hier een bericht achter voor één van onze medewerkers. "></textarea>
+    <textarea name="message" rows="10" cols="40" placeholder="Laat hier een bericht achter voor een van onze medewerkers. "></textarea>
     </label>
     <p class="antispam">
 	<br /><input name="url" /></p>

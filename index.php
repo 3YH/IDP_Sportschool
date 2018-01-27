@@ -70,33 +70,47 @@
         <div class="left">
           <div class="lid">
             <?php
+          // Alle data van lid ophalen + naam weergeven
           $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_array($result);
-          // Alle data van lid ophalen/naam weergeven
-          echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '</h4>';
-          $lastvisit = $row["LastVisit"];
+          echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_tsnvoegsel"] . ' ' . $row["lid_achternaam"] . '</h4>';
 
-          // Weergeven aantal dagen sinds laatste bezoek
+          // Aantal dagen sinds laatste bezoek
+          $sql = mysqli_fetch_assoc(mysqli_query($conn, "SELECT datum FROM resultaat"));
+          $lastvisit = $sql['datum'];
           $date = new DateTime($lastvisit);
           $now = new DateTime();
-          echo $date->diff($now)->format("<p>Uw laatste bezoek was %d dagen geleden</p>");
+          echo $date->diff($now)->format("<p>U heeft %d dagen geleden voor het laatst gesport.</p>");
           ?>
           <a href="update.php" class="button">Bewerken</a>
           </div>
           <div class="advies">
-          <a href="advies.php" class="button">Advies aan een medewerker vragen</a>
+          <a href="advies.php" class="button">Advies aan een medwerker vragen</a>
           </div>
         </div>
         <div class="middle">
-          <p>Apparaten</p>
+        <?php
+        // Gemiddelden van laatste 30 dagen(loopband) ophalen
+        $avgloopband = "SELECT FORMAT(AVG(cal),0) avg_cal_loopband, FORMAT(AVG(tijd),0) avg_tijd_loopband, FORMAT(AVG(afstand),0) avg_afst_loopband FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 1 AND lid_id = '" . $_SESSION['lid_id'] . "'";
+        $result = mysqli_query($conn, $avgloopband);
+        $row = mysqli_fetch_array($result);
+        ?>
+         <div class="loopband">
+         <h5>Loopband</h5>
+         <?php
+          echo '<p> Gem. calorieën verbrand: ' . $row['avg_cal_loopband'] . ' </p><br>';
+          echo '<p> Gem. tijd gebruikt: ' . $row['avg_tijd_loopband'] . ' minuten.</p><br>';
+          echo '<p> Gem. afstand afgelegd: ' . $row['avg_afst_loopband'] . ' meter.</p><br>';
+         ?>
+         </div>
         </div>
         <div class="right">
           <div class="stats">
             <p>Naam</p>
           </div>
           <div class="abonnement">
-            <p>Advies vragen</p>
+            <p>Abbo</p>
           </div>
         </div>
     </div>

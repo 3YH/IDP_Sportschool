@@ -26,7 +26,16 @@
             <input type="radio" name="u_abbo" id="regular" value="Regular"><label for="regular">Regular</label>
             <input type="radio" name="u_abbo" id="big" value="Big"><label for="big">Big</label></label>';
         echo '<label>Rekeningnummer<input type="text" name=u_rekeningnr value="' . $row["lid_rekeningnr"] . '" placeholder=""/></label>';
-        echo '<label>Bank<input type="text" name=u_bank value="' . $row["lid_bank"] . '" placeholder=""/></label>';
+        echo ' <label>Bank
+        <select name="u_bank" value="' . $row["lid_bank"] . '" required>
+        <option value="Rabobank">Rabobank</option>
+        <option value="ING">ING</option>
+        <option value="ABN Ambro">ABN Ambro</option>
+        <option value="Triodos Bank">Triodos Bank</option>
+        <option value="Deltra Lloyd">Delta Lloyd</option>
+        <option value="AEGON Bank">AEGON Bank</option>
+        <option value="NN Bank">NN Bank</option>
+        </select>';
         echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
         echo '<input type="hidden" name="id" value="' . $row["lid_id"] . '"/>';
         echo '<input class="button" type="submit" value="Wijzigen"/>';
