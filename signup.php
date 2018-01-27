@@ -51,7 +51,7 @@
                     <select name="lid_bank" required>
                     <option value="Rabobank">Rabobank</option>
                     <option value="ING">ING</option>
-                    <option value="ABN Ambbro">ABN Ambro</option>
+                    <option value="ABN Ambro">ABN Ambro</option>
                     <option value="Triodos Bank">Triodos bank</option>
                     <option value="Deltra Lloyd">Delta Lloyd</option>
                     <option value="AEGON Bank">AEGON bank</option>

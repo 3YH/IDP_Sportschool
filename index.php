@@ -74,7 +74,7 @@
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_array($result);
           // Alle data van lid ophalen/naam weergeven
-          echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_achternaam"] . '</h4>';
+          echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_tsnvoegsel"] . ' ' . $row["lid_achternaam"] . '</h4>';
           $lastvisit = $row["LastVisit"];
 
           // Weergeven aantal dagen sinds laatste bezoek
@@ -85,7 +85,7 @@
           <a href="update.php" class="button">Bewerken</a>
           </div>
           <div class="advies">
-          <a href="advies.php" class="button">Advies aan een medwerkers vragen</a>
+          <a href="advies.php" class="button">Advies aan een medwerker vragen</a>
           </div>
         </div>
         <div class="middle">
