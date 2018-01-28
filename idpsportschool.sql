@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 27, 2018 at 04:40 PM
+-- Generation Time: Jan 28, 2018 at 03:44 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -78,7 +78,7 @@ CREATE TABLE `leden` (
 
 INSERT INTO `leden` (`lid_id`, `pas_code`, `lid_voornaam`, `lid_tsnvoegsel`, `lid_achternaam`, `lid_gewicht`, `lid_geboortedatum`, `lid_email`, `lid_huisnr`, `lid_postcode`, `lid_straatnaam`, `lid_tel`, `lid_woonplaats`, `lid_rekeningnr`, `lid_bank`, `lid_abbo`, `lid_uid`, `lid_pwd`, `lid_registerdate`, `IsLoggedIn`) VALUES
 (2, '12345', 'henk', 'de', 'Beer', 56, '2000-01-09', 'meneer@hotmail.com', 18, '1688JK', 'boerenstreek', 658748754, 'Soest', 'NL77INGB0000578446', 'ING', '', 'Gebruikersnaam', 'wachtwoord', '2017-09-04', 'false'),
-(7, '', 'Yannick', '', 'Houtzager', 53, '2015-01-25', 'yannickhj3@gmail.com', 0, '3481tr', 'reiger', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'Rabobank', '', 'test', '$2y$10$3beOqflE9O1J/d8QQEvLEeV40TVgsKUYOTgDPkywVA9Bd5XsQhwAq', '2018-01-25', ''),
+(7, '', 'Yannick', '', 'Houtzager', 53, '2015-01-25', 'yannickhj3@gmail.com', 0, '3481tr', 'reiger', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Regular', 'test', '$2y$10$3beOqflE9O1J/d8QQEvLEeV40TVgsKUYOTgDPkywVA9Bd5XsQhwAq', '2018-01-25', ''),
 (8, '', 'Test3', 'tt', 'Testt', 70, '2018-01-25', 'yannickhj2@gmail.com', 0, '3481tr', 'daltonlaan', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'husker', 'Big', 'Admind', '$2y$10$Sxh4AVBR9jdrYJzdNJFl0OeZzoji4L0qKNTv01KYhsz88B5H844C.', '2018-01-25', ''),
 (9, '', 'Test2', 'tt', 'Testt', 50, '2018-01-25', 'yannickhj3@gmail.com', 12, '3481tr', 'daltonlaan', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'apollo', 'Regular', 'test2', '$2y$10$a1r1Mxy7QrUB1YaK4/6xJuu8G.MWCkov9eEoLZCFnkANhT.ALUCCi', '2018-01-25', '');
 
@@ -106,7 +106,10 @@ CREATE TABLE `resultaat` (
 INSERT INTO `resultaat` (`resultaat_id`, `lid_id`, `apparaat_id`, `tijd`, `cal`, `gem_snelheid`, `afstand`, `datum`) VALUES
 (1, 7, 2, 100, 78, 10, 50, '2018-01-24'),
 (2, 7, 1, 50, 7, 10, 50, '2018-01-01'),
-(3, 8, 2, 100, 78, 10, 50, '2017-12-28');
+(3, 8, 2, 100, 78, 10, 50, '2017-12-28'),
+(4, 7, 2, 60, 100, 10, 50, '2018-01-01'),
+(5, 7, 3, 300, 425, 20, 50, '2018-01-01'),
+(6, 7, 3, 50, 50, 20, 50, '2018-01-01');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +156,7 @@ ALTER TABLE `leden`
 -- AUTO_INCREMENT for table `resultaat`
 --
 ALTER TABLE `resultaat`
-  MODIFY `resultaat_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `resultaat_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
