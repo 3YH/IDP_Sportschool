@@ -64,7 +64,7 @@
                 <label>Wachtwoord
                     <input type="password" name="lid_pwd" placeholder="" required>
                 </label>
-                <button type="submit" name="submit">Voltooien</button>
+                <button class="button" type="submit" name="submit">Voltooien</button>
             </div>
         </div>
     </form>
