@@ -33,7 +33,7 @@ include_once 'header.php'
 ?>
 <div class="text-center">
 <h1>Bedankt voor uw bericht!</h1>
-<a href="index.php">Terug naar het dashboard</a>
+<a href="../index.php">Terug naar het dashboard</a>
 </div>
 <?php
   include_once 'footer.php'

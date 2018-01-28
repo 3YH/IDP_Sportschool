@@ -1,5 +1,11 @@
 .top-bar {
     .top-bar-left{
+        .menu-text{
+            color: #fff;
+            font-size: 1.4rem;
+            line-height: 0.8;
+            font-weight: 400;
+        }
         li{
             a{
                 color: #fff;
@@ -22,6 +28,13 @@
                     display: inline-block;
                     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
                 }
+            }
+            .count{
+                color: #fff;
+                display: inline-flex;
+                vertical-align: middle;
+                align-items: center;
+                padding-right: 15px;
             }
         }
     }

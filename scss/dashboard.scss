@@ -1,11 +1,37 @@
 .dashbg {
     background: #F4F8F9;
-    .top-bar{
+    .button {
+        &:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+            opacity: 1;
+            transition: 0.2s ease-in;
+        }
+    }
+    .valign-center {
+        display: inline-flex;
+        vertical-align: middle;
+        align-items: center;
+        .material-icons {
+            padding-bottom: 4px;
+        }
+    }
+    .top-bar {
         background-color: #293A4D;
     }
     .dashboard {
         @include xy-grid;
         @include xy-grid-container();
+        h4 {
+            margin: 15px 0;
+            line-height: 1.1;
+            color: #434A5D;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.1;
+            opacity: 0.7;
+            color: #6E7184;
+        }
         .left {
             @include xy-cell(3);
             .lid {
@@ -16,19 +42,20 @@
                 border-radius: 6px;
                 background: #fff;
                 text-align: center;
-                h4{
-                    margin: 15px 0;
-                }
-                p{
-                    font-size: 15px;
-                    line-height: 1.1;
-                    opacity: 0.7;
-                }
-                .button{
+                .button {
+                    opacity: 0.8;
+                    background-color: #EBEBEB;
+                    text-transform: uppercase;
+                    font-size: 0.8em;
+                    color: #7F8C9F;
                     position: absolute;
                     margin: 0;
                     bottom: 10px;
                     right: 10px;
+                    padding: 0.3em 0.6em 0.18em 0.4em;
+                    .material-icons {
+                        font-size: 21px;
+                    }
                 }
             }
             .advies {
@@ -37,6 +64,11 @@
                 border-radius: 6px;
                 height: 100px;
                 background: #fff;
+                position: relative;
+                .button {
+                    @include absolute-center;
+                    width: 190px;
+                }
             }
         }
         .middle {
@@ -45,22 +77,98 @@
             box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
             border-radius: 6px;
             background: #fff;
+            height: 400px;
+            .header {
+                border-bottom: 1px solid #E2E2E2;
+                height: 50px;
+                position: relative;
+                padding-left: 20px;
+                p {
+                    @include vertical-center;
+                    color: #858A9D;
+                    text-transform: uppercase;
+                    letter-spacing: 0.3px;
+                }
+            }
+            b {
+                font-weight: 500;
+                color: #434A5D;
+                letter-spacing: 0.5px;
+            }
+            p {
+                font-size: 0.8rem;
+                margin: 0;
+                line-height: 1.8;
+                color: #6E7184;
+            }
+            .apparaten {
+                @include xy-grid;
+                .top {
+                    display: inline-flex;
+                    vertical-align: middle;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    .icon {
+                        margin-right: 12px;
+                        display: inline-block;
+                        padding-top: 10px;
+                        text-align: center;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 60px;
+                        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+                    }
+                    .title {
+                        display: inline-block;
+                        line-height: 1.1;
+                        p {
+                            font-size: 0.8rem;
+                            margin: 0;
+                            color:#878A99;
+                            
+                        }
+                    }
+                }
+                .loopband {
+                    @include xy-cell(4);
+                    padding: 20px;
+                    .icon{
+                        color: #0046D4;
+                        background-color: #C9D9FA;
+                    }
+                }
+                .roeien {
+                    @include xy-cell(4);
+                    padding: 20px;
+                    .icon{
+                        color: #7052D6;
+                        background-color: #DDD5FE;
+                    }  
+                }
+                .fietsen {
+                    @include xy-cell(4);
+                    padding: 20px;
+                    .icon{
+                        color: #CA3A3A;
+                        background-color: #FFCCCB;
+                    }  
+                }
+            }
         }
         .right {
             @include xy-cell(3);
-            .stats {
-                margin: 15px;
-                box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
-                border-radius: 6px;
-                height: 300px;
-                background: #fff;
-            }
             .abonnement {
                 margin: 15px;
                 box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
                 border-radius: 6px;
-                height: 300px;
+                height: 341px;
                 background: #fff;
+                padding: 20px;
+                b{
+                font-weight: 500;
+                color: #434A5D;
+                letter-spacing: 0.5px;
+                }
             }
         }
     }
