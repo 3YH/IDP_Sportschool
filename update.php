@@ -22,12 +22,13 @@
         echo '<label>Email<input type="text" name=u_email value="' . $row["lid_email"] . '" placeholder=""/></label>';
         echo '<label>Telefoonnummer<input type="text" name=u_tel value="' . $row["lid_tel"] . '" placeholder=""/></label>';
         echo '<label>Abonnement<br>
+            <input hidden checked type="radio" name="u_abbo" id="mini" value="' . $row["lid_abbo"] . '">
             <input type="radio" name="u_abbo" id="mini" value="Mini"><label for="mini">Mini</label>
             <input type="radio" name="u_abbo" id="regular" value="Regular"><label for="regular">Regular</label>
             <input type="radio" name="u_abbo" id="big" value="Big"><label for="big">Big</label></label>';
         echo '<label>Rekeningnummer<input type="text" name=u_rekeningnr value="' . $row["lid_rekeningnr"] . '" placeholder=""/></label>';
         echo ' <label>Bank
-        <select name="u_bank" value="' . $row["lid_bank"] . '" required>
+        <select name="u_bank" value="' . $row["lid_bank"] . '">
         <option value="Rabobank">Rabobank</option>
         <option value="ING">ING</option>
         <option value="ABN Ambro">ABN Ambro</option>
