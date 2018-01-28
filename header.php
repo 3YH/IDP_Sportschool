@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benno's Sportschool</title>
     <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
 
   <body <?php if (isset($_SESSION['lid_id'])) { echo'class="dashbg"'; }?>>
@@ -18,10 +20,15 @@
     <div class="top-bar" data-sticky data-options="marginTop:0;">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Benno</li>
+          <li class="menu-text">Benno's sportshool</li>
           <?php
           if (isset($_SESSION['lid_id'])) {
-            echo'';
+            
+            echo'
+            <li>
+            <a href="index.php">Dashboard</a>
+          </li>
+          ';
           } else {
             echo'<li>
             <a href="#home">Home</a>
@@ -40,7 +47,12 @@
         <ul class="menu">
           <?php
           if (isset($_SESSION['lid_id'])) {
-            echo'<li><form action="includes/logout.inc.php" method="POST">
+            $sql = "SELECT COUNT(*) FROM leden WHERE IsLoggedIn = 'true'"; 
+            $rs = mysqli_query($conn, $sql); 
+            $result = mysqli_fetch_array($rs); 
+            echo'
+            <li class="count">Aantal bezoekers in sportschool: ' . $result[0] . '</li>
+            <li><form action="includes/logout.inc.php" method="POST">
                  <button class="button" type="submit" name="submit">Uitloggen</button>
                  </form></li>';
           } else {

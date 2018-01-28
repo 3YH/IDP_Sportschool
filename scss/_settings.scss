@@ -146,10 +146,10 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 78),
+    'h1': ('font-size': 64),
     'h2': ('font-size': 66),
     'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
+    'h4': ('font-size': 23),
     'h5': ('font-size': 20),
     'h6': ('font-size': 15),
   ),
@@ -839,7 +839,7 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
-$topbar-padding: 1.3rem;
+$topbar-padding: 0.8rem;
 $topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
