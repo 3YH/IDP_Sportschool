@@ -51,7 +51,7 @@
             $rs = mysqli_query($conn, $sql); 
             $result = mysqli_fetch_array($rs); 
             echo'
-            <li class="count">Aantal bezoekers in sportschool: ' . $result[0] . '</li>
+            <li class="count">Er zijn ' . $result[0] . ' mensen aan het sporten.</li>
             <li><form action="includes/logout.inc.php" method="POST">
                  <button class="button" type="submit" name="submit">Uitloggen</button>
                  </form></li>';

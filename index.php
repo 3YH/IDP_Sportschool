@@ -100,8 +100,7 @@
         ';
               echo'
               </div> 
-              </div>';
-           echo'
+              </div>
            <div class="right">
       <div class="abonnement">
       <h4>Abonnement</h4>
