@@ -4,7 +4,16 @@
     <form action="includes/signup.inc.php" method="POST">
         <div class="grid-x align-center">
             <div class="cell shrink form-card">
+            <?php 
+            function get_code() {
+                $random_nr_length = 10; 
+                $uniqueId= mt_rand().''.time();
+                $uniqueId = substr($uniqueId,0,$random_nr_length); 
+                echo $uniqueId;
+            }
+           ?>
             <h4>Aanmelden</h4>
+                    <input hidden name="pas_code" value="<?= get_code(); ?>" required>
                 <label>Voornaam
                     <input type="text" name="lid_voornaam" placeholder="" required>
                 </label>

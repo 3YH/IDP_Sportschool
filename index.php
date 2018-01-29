@@ -8,19 +8,23 @@
             <div class="left">
             <div class="lid">';
            
-             // Alle data van lid ophalen + naam weergeven
+          // Alle data van lid ophalen + naam weergeven
           $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_array($result);
           echo '<h4>' . $row["lid_voornaam"] . ' ' . $row["lid_tsnvoegsel"] . ' ' . $row["lid_achternaam"] . '</h4>';
 
-          // Aantal dagen sinds laatste bezoek
-          $sql = mysqli_fetch_assoc(mysqli_query($conn, "SELECT datum FROM resultaat"));
+          // Aantal dagen sinds laatste bezoek bericht
+          $sql = mysqli_fetch_assoc(mysqli_query($conn, "SELECT datum FROM resultaat WHERE lid_id = '" . $_SESSION['lid_id'] . "'"));
           $lastvisit = $sql['datum'];
           $date = new DateTime($lastvisit);
           $now = new DateTime();
-          echo $date->diff($now)->format("<p>U heeft %d dagen geleden voor het laatst gesport.</p>");
-
+          //Check of er al resultaten zijn
+          if(!empty($lastvisit)) { 
+            echo $date->diff($now)->format("<p>U heeft %d dagen geleden voor het laatst gesport.</p>");
+          } else {
+            echo '<p>U heeft nog niet gesport.</p>'; 
+          }
         echo'
          <a href="update.php" class="button valign-center">
          <i class="material-icons">mode_edit</i>Bewerken</a>
