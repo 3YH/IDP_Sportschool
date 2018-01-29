@@ -16,7 +16,7 @@
         echo '<label>Geboortedatum<input type="date" name=u_geboortedatum value="' . $row["lid_geboortedatum"] . '" placeholder=""/></label>';
         echo '<label>Gewicht<input type="text" name=u_gewicht value="' . $row["lid_gewicht"] . '" placeholder=""/></label>';
         echo '<label>Straatnaam<input type="text" name=u_straatnaam value="' . $row["lid_straatnaam"] . '" placeholder=""/></label>';
-        echo '<label>Huisnummer<input type="text" name=u_huisnummer value="' . $row["lid_huisnummer"] . '" placeholder=""/></label>';
+        echo '<label>Huisnummer<input type="number" name=u_huisnr value="' . $row["lid_huisnr"] . '" placeholder=""/></label>';
         echo '<label>Postcode<input type="text" name=u_postcode value="' . $row["lid_postcode"] . '" placeholder=""/></label>';
         echo '<label>Woonplaats<input type="text" name=u_woonplaats value="' . $row["lid_woonplaats"] . '" placeholder=""/></label>';
         echo '<label>Email<input type="text" name=u_email value="' . $row["lid_email"] . '" placeholder=""/></label>';
