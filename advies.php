@@ -12,7 +12,7 @@
    <label> Uw naam
     <input name="name" type="text" value="<?php echo '' . $row["lid_voornaam"] . ' ' . $row["lid_tsnvoegsel"] . ' ' . $row["lid_achternaam"] . ''?>"/>
     </label>
-    <input name="name" type="hidden" value="<?php echo '' . $row["lid_email"] . ''?>"/>
+    <input name="email" type="hidden" value="<?php echo '' . $row["lid_email"] . ''?>"/>
     <label> Onderwerp
     <input name="subject" type="text" value="Advies medewerker"/>
     </label>

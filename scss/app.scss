@@ -1,15 +1,18 @@
 @charset 'utf-8';
+// App.scss importeert alle .scss en wordt door gulp.js minified opgeslagen als .css
 
+// Importeren Foundation stylesheets
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
 
+// Importeren eigen stylesheets
 @import 'header';
 @import 'home';
 @import 'dashboard';
 @import 'signup';
 
-
+// Keuze welke Foundation elementen nodig zijn(uncommented is nodig)  
 @include foundation-global-styles;
 //@include foundation-grid;
 // @include foundation-flex-grid;
