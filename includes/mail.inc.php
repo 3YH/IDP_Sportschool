@@ -4,7 +4,7 @@
 if(isset($_POST['url']) && $_POST['url'] == ''){
 
 	// Benno email
-	$youremail = 'yannickhj@gmail.com';
+	$youremail = 'Papercut@user.com';
 
 	// The standard email format
 	$body = "Een klant heeft advies aangevraagd:
