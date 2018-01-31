@@ -40,7 +40,7 @@
         <div class="apparaten">';
 
         // Gemiddelden van laatste 30 dagen(loopband) ophalen
-        $avgloopband = "SELECT FORMAT(AVG(cal),0) avg_cal_loopband, FORMAT(AVG(tijd),0) avg_tijd_loopband, FORMAT(AVG(afstand),0) avg_afst_loopband FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 1 AND lid_id = '" . $_SESSION['lid_id'] . "'";
+        $avgloopband = "SELECT FORMAT(AVG(cal),0) avg_cal_loopband, FORMAT(AVG(tijd / 60),0) avg_tijd_loopband, FORMAT(AVG(afstand),0) avg_afst_loopband FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 1 AND lid_id = '" . $_SESSION['lid_id'] . "'";
         $result = mysqli_query($conn, $avgloopband);
         $row = mysqli_fetch_array($result);
         echo'
@@ -61,7 +61,7 @@
               </div>
               ';
               // Gemiddelden van laatste 30 dagen(roeien) ophalen
-        $avgroeien = "SELECT FORMAT(AVG(cal),0) avg_cal_roeien, FORMAT(AVG(tijd),0) avg_tijd_roeien, FORMAT(AVG(afstand),0) avg_afst_roeien FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 2 AND lid_id = '" . $_SESSION['lid_id'] . "'";
+        $avgroeien = "SELECT FORMAT(AVG(cal),0) avg_cal_roeien, FORMAT(AVG(tijd / 60),0) avg_tijd_roeien, FORMAT(AVG(afstand),0) avg_afst_roeien FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 2 AND lid_id = '" . $_SESSION['lid_id'] . "'";
         $result = mysqli_query($conn, $avgroeien);
         $row = mysqli_fetch_array($result);
         echo'
@@ -82,7 +82,7 @@
           </div>
           ';
            // Gemiddelden van laatste 30 dagen(fietsen) ophalen
-        $avgfietsen = "SELECT FORMAT(AVG(cal),0) avg_cal_fietsen, FORMAT(AVG(tijd),0) avg_tijd_fietsen, FORMAT(AVG(afstand),0) avg_afst_fietsen FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 3 AND lid_id = '" . $_SESSION['lid_id'] . "'";
+        $avgfietsen = "SELECT FORMAT(AVG(cal),0) avg_cal_fietsen, FORMAT(AVG(tijd / 60),0) avg_tijd_fietsen, FORMAT(AVG(afstand),0) avg_afst_fietsen FROM resultaat WHERE DATEDIFF(CURDATE(),datum) between 0 AND 30 AND apparaat_id = 3 AND lid_id = '" . $_SESSION['lid_id'] . "'";
         $result = mysqli_query($conn, $avgfietsen);
         $row = mysqli_fetch_array($result);
         echo'
@@ -170,6 +170,19 @@
         <br>
         <p> <b>Missie</b> <br> Onze missie is simpelweg, zo veel mogelijk klanten aan trekken door zoveel mogelijk activiteiten te organiseren. Wij zijn als sportschool ook gericht op alle leeftijden van jong tot oud. We hebben de beste coaches, met minimaal 10 jaar ervaring, die voor juist dit soort activiteiten een speciale opleiding hebben gevolgd. Daarnaast hebben we een lijst vol met aparte programma’s, van hard workout tot dieet programma’s.</p>
         </div>
+        <footer class="social-footer">
+  <div class="social-footer-left">
+    <a href="#">Benno&#39;s Sportshool</a>
+  </div>
+  <div class="social-footer-icons">
+    <ul class="menu simple">
+      <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+      <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
         '; 
           }
     ?>
