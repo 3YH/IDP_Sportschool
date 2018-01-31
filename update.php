@@ -24,8 +24,8 @@
         echo '<label>Abonnement<br>
             <input hidden checked type="radio" name="u_abbo" id="mini" value="' . $row["lid_abbo"] . '">
             <input type="radio" name="u_abbo" id="mini" value="Mini"><label for="mini">Mini</label>
-            <input type="radio" name="u_abbo" id="regular" value="Regular"><label for="regular">Regular</label>
-            <input type="radio" name="u_abbo" id="big" value="Big"><label for="big">Big</label></label>';
+            <input type="radio" name="u_abbo" id="regular" value="Flex"><label for="regular">Flex</label>
+            <input type="radio" name="u_abbo" id="big" value="Easy"><label for="big">Easy</label></label>';
         echo '<label>Rekeningnummer<input type="text" name=u_rekeningnr value="' . $row["lid_rekeningnr"] . '" placeholder=""/></label>';
         echo ' <label>Bank
         <select name="u_bank" value="' . $row["lid_bank"] . '">

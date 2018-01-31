@@ -137,7 +137,7 @@
               <div class="card mini">
                 <div class="card-section ">
                   <h3>Mini</h3>
-                  <h2>€10 /
+                  <h2>€13 /
                     <span>maand</span>
                   </h2>
                   <a href="signup.php" class="button large">Schrijf je in!</a>
@@ -145,8 +145,8 @@
               </div>
               <div class="card normal">
                 <div class="card-section">
-                  <h3>Regular</h3>
-                  <h2>€20 /
+                  <h3>Flex</h3>
+                  <h2>€26 /
                     <span>maand</span>
                   </h2>
                   <a href="signup.php" class="button large">Schrijf je in!</a>
@@ -154,8 +154,8 @@
               </div>
               <div class="card big">
                 <div class="card-section">
-                  <h3>Big</h3>
-                  <h2>€35 /
+                  <h3>Easy</h3>
+                  <h2>€32 /
                     <span>maand</span>
                   </h2>
                   <a href="signup.php" class="button large">Schrijf je in!</a>

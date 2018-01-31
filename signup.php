@@ -50,8 +50,8 @@
                 <label>Abonnement
                 <br>
                     <input type="radio" name="lid_abbo" id="mini" value="Mini" required><label for="mini">Mini</label>
-                    <input type="radio" name="lid_abbo" id="regular" value="Regular" required><label for="regular">Regular</label>
-                    <input type="radio" name="lid_abbo" id="big" value="Big" required><label for="big">Big</label>
+                    <input type="radio" name="lid_abbo" id="regular" value="Flex" required><label for="regular">Regular</label>
+                    <input type="radio" name="lid_abbo" id="big" value="Easy" required><label for="big">Easy</label>
                 </label>
                 <label>Rekeningnummer
                     <input type="text" name="lid_rekeningnr" placeholder="" required>
