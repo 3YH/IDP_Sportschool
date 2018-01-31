@@ -56,3 +56,5 @@ if (isset($_POST['submit'])) {
     header("Location: ../index.php?login=error");
     exit();
 }
+
+// $sql = "SELECT * FROM leden WHERE lid_uid='$_POST[u_uid]' AND lid_uid != '{$_SESSION['lid_uid']}'";
