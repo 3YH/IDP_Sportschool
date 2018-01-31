@@ -170,6 +170,19 @@
         <br>
         <p> <b>Missie</b> <br> Onze missie is simpelweg, zo veel mogelijk klanten aan trekken door zoveel mogelijk activiteiten te organiseren. Wij zijn als sportschool ook gericht op alle leeftijden van jong tot oud. We hebben de beste coaches, met minimaal 10 jaar ervaring, die voor juist dit soort activiteiten een speciale opleiding hebben gevolgd. Daarnaast hebben we een lijst vol met aparte programma’s, van hard workout tot dieet programma’s.</p>
         </div>
+        <footer class="social-footer">
+  <div class="social-footer-left">
+    <a href="#">Benno&#39;s Sportshool</a>
+  </div>
+  <div class="social-footer-icons">
+    <ul class="menu simple">
+      <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+      <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
         '; 
           }
     ?>
