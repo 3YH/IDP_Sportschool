@@ -162,9 +162,15 @@
                 </div>
               </div>
             </div>
+            <div class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="img/pushup.jpg"></div>
         <div class="over-ons" id="overons">
           <h2>Over ons</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repellendus ipsa harum impedit quaerat nostrum quia laudantium deleniti odio laborum.   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illo a nemo debitis aliquam! Inventore libero tempore enim nesciunt numquam? Maiores enim rerum iure animi id!  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed ab repudiandae quisquam molestiae dicta nostrum harum neque. Ullam neque dolores iure vitae ad, mollitia repudiandae fugiat quam aspernatur, reiciendis quod maiores accusantium doloremque enim non eveniet et officiis. Id, libero?'; 
+        <p><b>Visie</b> <br> Benno’s sportscholen dient zich te richten op de toegevoegde waarde die zij leveren aan de klant. De klant is tenslotte een verzameling van primaire stakeholders die belang hebben bij de ontwikkeling van de sportscholen, zonder klanten kan er namelijk geen winst behaald wat de continuïteit en de ontwikkeling van de sportscholen tenietdoet. 
+        De klant dient dus overtuigd te worden om te komen sporten bij een van Benno’s sportfaciliteiten en niet bij de een van Benno’s concurrenten, Benno’s sportscholen dient dus naar de behoefte van de klanten te kijken.</p>
+        <br>
+        <p> <b>Missie</b> <br> Onze missie is simpelweg, zo veel mogelijk klanten aan trekken door zoveel mogelijk activiteiten te organiseren. Wij zijn als sportschool ook gericht op alle leeftijden van jong tot oud. We hebben de beste coaches, met minimaal 10 jaar ervaring, die voor juist dit soort activiteiten een speciale opleiding hebben gevolgd. Daarnaast hebben we een lijst vol met aparte programma’s, van hard workout tot dieet programma’s.</p>
+        </div>
+        '; 
           }
     ?>
     <?php
