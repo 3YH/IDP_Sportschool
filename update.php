@@ -37,8 +37,6 @@
         <option value="AEGON Bank">AEGON Bank</option>
         <option value="NN Bank">NN Bank</option>
         </select>';
-        // echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
-        // echo '<label>Wachtwoord<input type="password" name=u_pwd placeholder=""/>';
         echo '<input type="hidden" name="id" value="' . $row["lid_id"] . '"/>';
         echo '<input class="button" type="submit" value="Wijzigen"/>';
         echo'</form>';
