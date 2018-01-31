@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 29, 2018 at 12:48 PM
+-- Generation Time: Jan 31, 2018 at 06:02 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -77,10 +77,15 @@ CREATE TABLE `leden` (
 --
 
 INSERT INTO `leden` (`lid_id`, `pas_code`, `lid_voornaam`, `lid_tsnvoegsel`, `lid_achternaam`, `lid_gewicht`, `lid_geboortedatum`, `lid_email`, `lid_huisnr`, `lid_postcode`, `lid_straatnaam`, `lid_tel`, `lid_woonplaats`, `lid_rekeningnr`, `lid_bank`, `lid_abbo`, `lid_uid`, `lid_pwd`, `lid_registerdate`, `IsLoggedIn`) VALUES
-(2, 12345, 'henk', 'de', 'Beer', 56, '2000-01-09', 'meneer@hotmail.com', 18, '1688JK', 'boerenstreek', 658748754, 'Soest', 'NL77INGB0000578446', 'ING', '', 'Gebruikersnaam', 'wachtwoord', '2017-09-04', 'false'),
-(7, 0, 'Yannick', '', 'Houtzager', 53, '2015-01-25', 'yannickhj3@gmail.com', 99, '3481tr', 'reiger', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Big', 'test', '$2y$10$3beOqflE9O1J/d8QQEvLEeV40TVgsKUYOTgDPkywVA9Bd5XsQhwAq', '2018-01-25', ''),
-(8, 0, 'Test3', 'tt', 'Testt', 70, '2018-01-25', 'yannickhj2@gmail.com', 0, '3481tr', 'daltonlaan', 683777745, 'utrecht', 'NL15 RABO 0148 1234 56', 'husker', 'Big', 'Admind', '$2y$10$Sxh4AVBR9jdrYJzdNJFl0OeZzoji4L0qKNTv01KYhsz88B5H844C.', '2018-01-25', ''),
-(10, 2147483647, 'Jan', 'van', 'Eerd', 78, '2018-01-29', 'volderlgio@gmail.com', 12, '3481TR', 'Reiger', 683777745, 'Harmelen', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Regular', 'test2', '$2y$10$5HvR3tgpczAWpJZSsYLJ.uO7B/lYIKANvwlZymkNUJ4y1ZNvrshSu', '2018-01-29', NULL);
+(10, 2147483647, 'Jan', 'van', 'Eerd', 78, '2018-01-29', 'jan1@gmail.com', 12, '3481TR', 'Reiger', 683777745, 'Harmelen', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Regular', 'jan1', '$2y$10$5HvR3tgpczAWpJZSsYLJ.uO7B/lYIKANvwlZymkNUJ4y1ZNvrshSu', '2018-01-29', NULL),
+(13, 1916653541, 'Rogier', '', 'Veldt', 88, '1991-01-31', 'rogier1@gmail.com', 27, '8872 MA', 'De Finne', 643747145, 'Midlum', 'NL15 RABO 0148 1234 56', 'ABN Ambro', 'Mini', 'rogier1', '$2y$10$xta1V1EkAHd/wgomXOhbRem1oeCoGt2Ze53lQunDPxWd0ZnovpAP6', '2018-01-31', NULL),
+(14, 1976751541, 'Steef', '', 'Robbers', 56, '1993-01-16', 'steef1@gmail.com', 196, '8872 MA', 'Amalia van Solmsstraat', 643747145, 'Honselersdijk ', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Flex', 'steef1', '$2y$10$xta1V1EkAHd/wgomXOhbRem1oeCoGt2Ze53lQunDPxWd0ZnovpAP6', '2018-01-31', NULL),
+(15, 1937505091, 'Nanneke', 'van', 'Alebeek', 59, '1976-06-30', 'nanneke1@gmail.com', 159, '4515 NE', 'Klakbaan', 643747145, 'IJzendijke', 'NL15 RABO 0148 1234 56', 'ING', 'Easy', 'nanneke1', '$2y$10$MaCF6b/v7jpuyIi9CG.wDeXZJ7PpysNVa1IF38KYrX/5WZqdV9jXy', '2018-01-31', NULL),
+(16, 2147483647, 'Florijn', '', 'Spil', 76, '2004-01-31', 'florijn1@gmail.com', 138, '7586 BL', 'Hoofdstraat', 643747145, 'Overdinkel ', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Mini', 'florijn1', '$2y$10$vmzbkooYdZ6xwj/mRFnpAeouh.gIMIhC6BzMCpuSACH8iOGmTmk1a', '2018-01-31', NULL),
+(17, 2147483647, 'Pascal', 'van', 'Leeuwen', 83, '1986-01-31', 'pascal1@gmail.com', 99, '4515 NE', 'Baronielaan', 683777745, 'Emmeloord ', 'NL15 RABO 0148 1234 56', 'NN Bank', 'Easy', 'pascal1', '$2y$10$slrkc/Is0LSGKe5xG.d3.OdK3orx0R3qCXHbr2GCVdzXthGOkbPH.', '2018-01-31', NULL),
+(18, 2147483647, 'Oguz', '', 'Diks', 68, '1987-10-27', 'oguz1@gmail.com', 190, '8401 RG', 'Watse Eelkesstrjitte', 641747745, 'Gorredijk ', 'NL15 RABO 0148 1234 56', 'Triodos Bank', 'Flex', 'oguz1', '$2y$10$JwOmPZWiSDgSLpNyHzJkWeX15irjfeTpbX/sAniNusVmAdpdfX0YW', '2018-01-31', NULL),
+(19, 2147483647, 'Krissie', '', 'Niesing', 58, '1991-08-13', 'krissie1@gmail.com', 170, '3863 AE', 'Van der Meerstraat', 643747145, 'Nijkerk ', 'NL15 RABO 0148 1234 56', 'Rabobank', 'Mini', 'krissie1', '$2y$10$Av2qkFpRTBybO/fkth6vJeKMABO5tMosurP4iq4sCk2ZJAf4mhPrq', '2018-01-31', NULL),
+(20, 2147483647, 'Thea', 'van', '\'t Zand', 87, '1995-01-31', 'thea1@gmail.com', 64, '4515 NE', 'Burgemeester Verduynstraat', 643747145, 'Waalwijk', 'NL15 RABO 0148 1234 56', 'Deltra Lloyd', 'Easy', 'thea1', '$2y$10$PAaeyOmQ1n0nTO0ijQ.S5OXkikA9gkGM1ZwnIVVKtCEp/zflzcQ5K', '2018-01-31', NULL);
 
 -- --------------------------------------------------------
 
@@ -104,14 +109,12 @@ CREATE TABLE `resultaat` (
 --
 
 INSERT INTO `resultaat` (`resultaat_id`, `lid_id`, `apparaat_id`, `tijd`, `cal`, `gem_snelheid`, `afstand`, `datum`) VALUES
-(1, 7, 2, 100, 78, 10, 50, '2018-01-24'),
-(2, 7, 1, 50, 7, 10, 50, '2018-01-01'),
-(3, 8, 2, 100, 78, 10, 50, '2017-12-28'),
-(4, 7, 2, 60, 100, 10, 50, '2018-01-01'),
-(5, 7, 3, 300, 425, 20, 50, '2018-01-01'),
-(6, 7, 3, 50, 50, 20, 50, '2018-01-01'),
-(9, 8, 1, 88, 50, 20, 50, '2018-01-28'),
-(10, 10, 1, 88, 50, 20, 50, '2018-01-02');
+(12, 10, 1, 431, 126, 23, 2120, '2018-01-25'),
+(13, 10, 2, 1153, 300, 29, 5032, '2018-01-22'),
+(14, 10, 2, 991, 200, 26, 1043, '2018-01-17'),
+(15, 10, 1, 491, 220, 13, 420, '2018-01-10'),
+(16, 10, 3, 2111, 123, 29, 6214, '2017-12-19'),
+(17, 10, 3, 1325, 82, 25, 3218, '2018-01-29');
 
 --
 -- Indexes for dumped tables
@@ -153,12 +156,12 @@ ALTER TABLE `apparaat`
 -- AUTO_INCREMENT for table `leden`
 --
 ALTER TABLE `leden`
-  MODIFY `lid_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `lid_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `resultaat`
 --
 ALTER TABLE `resultaat`
-  MODIFY `resultaat_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `resultaat_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --
