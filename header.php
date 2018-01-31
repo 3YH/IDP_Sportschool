@@ -50,8 +50,14 @@
             $sql = "SELECT COUNT(*) FROM leden WHERE IsLoggedIn = 'true'"; 
             $rs = mysqli_query($conn, $sql); 
             $result = mysqli_fetch_array($rs); 
+            if($result[0] == '0') {
+            echo'<li class="count">Er is niemand aan het sporten.</li>';
+          } elseif ($result[0] == '1') {
+            echo '<li class="count">Er is ' . $result[0] . ' persoon aan het sporten.</li>';
+          } else {
+            echo'<li class="count">Er zijn ' . $result[0] . ' mensen aan het sporten.</li>';
+          }
             echo'
-            <li class="count">Er zijn ' . $result[0] . ' mensen aan het sporten.</li>
             <li><form action="includes/logout.inc.php" method="POST">
                  <button class="button" type="submit" name="submit">Uitloggen</button>
                  </form></li>';
