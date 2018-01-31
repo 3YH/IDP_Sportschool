@@ -3,7 +3,7 @@
     background-size: cover;
     min-height: 98vh;
     margin-top: -83px;
-    box-shadow: inset 0 0 0 700px rgba(47, 66, 70, 0.84);
+    box-shadow: inset 0 0 0 700px rgba(47, 66, 70, 0.74);
     z-index: 3;
     .hero-content {
         @include absolute-center;
@@ -59,6 +59,7 @@
     z-index: 5;
     background-color: #fff;
     margin-top: -70px;
+    margin-bottom: 40px;
     .populair{
         @include xy-cell;
         @include horizontal-center;
@@ -105,6 +106,10 @@
     }
 }
 
+.parallax-window {
+    min-height: 340px;
+    background: transparent;
+}
 
 .over-ons{
     @include xy-grid;
@@ -121,3 +126,31 @@
         text-align: center;
     }
 }
+
+.social-footer {
+    padding: 1rem;
+    background:#293a4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        color:#fff;
+    }
+    .social-footer-icons {
+      li:last-of-type {
+        margin-right: 0;
+      }
+  
+      .fa {
+        font-size: 1.3rem;
+        color: $white;
+  
+        &:hover {
+          color: darken($dark-gray, 25%);
+          transition: color 0.3s ease-in;
+        }
+      }
+    }
+  }
+  
+  
