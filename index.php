@@ -109,7 +109,7 @@
       <div class="abonnement">
       <h4>Abonnement</h4>
            ';
-           $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
+        $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
         echo '<p> Soort: <b>' . $row["lid_abbo"] . '</b></p>';

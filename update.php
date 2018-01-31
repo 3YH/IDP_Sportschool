@@ -2,7 +2,7 @@
   include_once 'header.php'
 ?>
 <?php
-    $sql = "SELECT * FROM leden WHERE lid_uid = '" . $_SESSION['lid_uid'] . "'";
+    $sql = "SELECT * FROM leden WHERE lid_id = '" . $_SESSION['lid_id'] . "'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result)
 ?>
@@ -37,7 +37,8 @@
         <option value="AEGON Bank">AEGON Bank</option>
         <option value="NN Bank">NN Bank</option>
         </select>';
-        echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
+        // echo '<label>Gebruikersnaam<input type="text" name=u_uid value="' . $row["lid_uid"] . '" placeholder=""/>';
+        // echo '<label>Wachtwoord<input type="password" name=u_pwd placeholder=""/>';
         echo '<input type="hidden" name="id" value="' . $row["lid_id"] . '"/>';
         echo '<input class="button" type="submit" value="Wijzigen"/>';
         echo'</form>';
