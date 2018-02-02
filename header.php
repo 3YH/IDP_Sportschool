@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet"> 
   </head>
 
   <body <?php if (isset($_SESSION['lid_id'])) { echo'class="dashbg"'; }?>>
